@@ -5,7 +5,7 @@ import pandas as pd
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
-data = pd.read_csv('Book1.csv')
+data = pd.read_csv('data.csv')
 
 data['Colour']='0'
 

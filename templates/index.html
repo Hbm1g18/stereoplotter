@@ -1,9 +1,120 @@
-<div id="convhold">
-    <div id="converter">
-        <form id="convform" method='POST' enctype='multipart/form-data'>
-            {{form.hidden_tag()}}
-            {{form.file()}}
-            {{form.submit()}}
-        </form>
+<head>
+    <link href="{{ url_for('static',filename='styles/style.css') }}" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@700&family=Josefin+Sans:ital,wght@1,700&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+</head>
+
+<body> 
+    <div class="loader"></div>
+
+    <div id="complete">
+        <img src="/static/tick.png">
     </div>
-</div>
+  <div id="ttl">
+        <h1>Stereoplotter</h1>
+        <p>Drag your file below to produce stereoplots and rose diagrams</p>
+    </div>
+    
+    <div id="convhold">
+        <div id="converter">
+            <form id="convform" method='POST' enctype='multipart/form-data'>
+                {{form.hidden_tag()}}
+                {{form.file()}}
+                {{form.submit()}}
+            </form>
+        </div>
+    </div>
+    <div id="fakebox"></div>
+
+    <div id="help">
+        <h1>How to use</h1>
+    </div>
+    <div id="offline">
+        <h1>For offline use</h1>
+    </div>
+
+    <div id="helpmodal">
+        <div id="popup">
+            <h1>Formatting data</h1>
+            <p>Ensure that the filename is 'data' and the format is .CSV</p>
+            <p>The data should contain 3 columns as shown below</p>
+            <div class="mockexcel">
+                <div class="exhead">Strike</div>
+                <div class="exhead">Dip</div>
+                <div class="exhead">Label</div>
+            </div>
+            <div class="mockexcel">
+                <div class="exhead">1</div>
+                <div class="exhead">1</div>
+                <div class="exhead">1</div>
+            </div>
+            <div class="mockexcel">
+                <div class="exhead">2</div>
+                <div class="exhead">2</div>
+                <div class="exhead">2</div>
+            </div>
+            <p id="space">The program will then take the file and produce a stereoplot,</p>
+            <p>a pole contour plot and a rose diagram.</p>
+            <p>Data will be downloaded once complete in a .zip file. </p>
+            <p>Within will be the plots in both .png and .svg format.</p>
+        </div>
+        <div id="modalclose">+</div>
+    </div>
+
+    <div id="offlinemodal">
+        <div id="opopup">
+            <h1>Offline use with python</h1>
+            <p>Download the python file below for use offline.</p>
+            <a id="pydown" href="/static/files/stereo.py" download>stereo.py</a>
+            <p>Create a folder containing both the 'stereo.py' and your</p>
+            <p>data sheet, ensuring format is correct (See 'How to use').</p>
+            <p>Navigate to your folder with shell of choice and run</p>
+            <p>using 'py stereo.py'.</p>
+        </div>
+        <div id="omodalclose">+</div>
+    </div>
+
+    
+
+</body> 
+
+
+<script>
+    document.getElementById('submit').value="Convert"
+</script>
+
+<script>
+    document.getElementById('help').addEventListener('click', function() {
+        document.getElementById('helpmodal').style.display = 'flex';
+});
+</script>
+<script>
+    document.getElementById('modalclose').addEventListener('click', function() {
+        document.getElementById('helpmodal').style.display = 'none';
+});
+</script>
+<script>
+    document.getElementById('offline').addEventListener('click', function() {
+        document.getElementById('offlinemodal').style.display = 'flex';
+});
+</script>
+<script>
+    document.getElementById('omodalclose').addEventListener('click', function() {
+        document.getElementById('offlinemodal').style.display = 'none';
+});
+</script>
+
+<script>
+    document.getElementById('submit').addEventListener('click', function() {
+        document.getElementById('file').style.display = 'none';
+        document.getElementById('fakebox').style.display = 'none';
+        document.querySelector('.loader').style.display = 'flex'
+        document.getElementById('submit').style.display = 'none';
+        setTimeout(function () {
+            document.querySelector('.loader').style.display = 'none'
+            document.getElementById('complete').style.display = 'flex'
+        }, 15000);
+});
+</script>

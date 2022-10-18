@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+  }
+body{
+    /* background-color: rgb(165, 231, 139); */
+}
+#ttl{
+    width: 100vw;
+    height:25vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#ttl h1{
+    font-family: 'Amaranth', sans-serif;
+    font-size: 11vh;
+}
+
+#ttl p{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 5vh;
+}
+
+#convhold{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+#converter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:60vw;
+    height: 50vh;
+}
+
+input::file-selector-button {
+    margin-right: 4vw;
+    margin-left: 5vw;
+    background-color: rgb(116, 182, 199);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 8vh;
+    border-style: none;
+}
+
+input::file-selector-button:hover{
+    cursor: pointer;
+}
+
+input[type=file]{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 8vh;
+    color: rgb(0, 0, 0);
+    background-color: rgb(116, 182, 199);
+    border-style: none;
+    border-bottom-left-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
+    width: 60vw;
+    height: 20vh;
+    margin-top: 5vh;
+    align-items: center;
+}
+
+input[type=file]:hover{
+    cursor: pointer;
+}
+input[type=submit]{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 6vh;
+    color: white;
+    background-color: rgb(2, 2, 2);
+    width: 12vw;
+    height: 10vh;
+    border-radius: 0.5vw;
+    margin-top: 5vh;
+    position: fixed;
+    left: 43vw;
+    top: 73vh;
+}
+input[type=submit]:hover{
+    cursor:pointer;
+}
+#fakebox{
+    width: 60vw;
+    height: 10vh;
+    background-color: rgb(116, 182, 199);
+    border-top-left-radius: 0.5vw;
+    border-top-right-radius: 0.5vw;
+    position: fixed;
+    top: 43vh;
+    left: 20vw;
+}
+#fakebox:hover{
+    cursor: pointer;
+}
+
+#help{
+    width: 20vw;
+    height: 10vh;
+    position: fixed;
+    top: 26vh;
+    left: 22vw;
+}
+#help h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 7vh;
+    color: black;
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+}
+#help:hover > h1{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#offline{
+    width: 25vw;
+    height: 10vh;
+    position: fixed;
+    top: 26vh;
+    right: 18vw;
+}
+#offline h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 7vh;
+    color: black;
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+}
+#offline:hover > h1{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#helpmodal{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.288);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#popup{
+    width: 60vw;
+    height: 85vh;
+    background-color: white;
+    border-radius: 0.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#popup h1{
+    font-family: 'Amaranth', sans-serif;
+    font-size: 8vh;
+}
+#popup p{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 4vh;
+    font-weight: bold;
+    text-overflow: wrap;
+}
+
+
+#offlinemodal{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.288);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+#opopup{
+    width: 60vw;
+    height: 65vh;
+    background-color: white;
+    border-radius: 0.2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#opopup h1{
+    font-family: 'Amaranth', sans-serif;
+    font-size: 8vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+#opopup p{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 4vh;
+    font-weight: bold;
+    text-overflow: wrap;
+    margin-top: 1vh;
+}
+
+#pydown{
+    text-decoration: none;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+
+.mockexcel{
+    width: 84vw;
+    height:10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+.exhead{
+    width: 10vw;
+    height: 10vh;
+    background-color: antiquewhite;
+    border-style: solid;
+    border-width: 0.5vh;
+    border-color: black;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    font-size: 6vh;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#space{
+    margin-top: 2vh;
+}
+
+#modalclose{
+    width: 6vw;
+    height: 6vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 20vw;
+    top: 6vh;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 15vh;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.438);
+    transform: rotate(45deg);
+    transition: 0.2s ease-in-out;
+}
+#modalclose:hover{
+    cursor: pointer;
+    color:rgb(156, 14, 14);
+}
+
+#omodalclose{
+    width: 6vw;
+    height: 6vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 21vw;
+    top: 17vh;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 15vh;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.438);
+    transform: rotate(45deg);
+    transition: 0.2s ease-in-out;
+}
+#omodalclose:hover{
+    cursor: pointer;
+    color:rgb(156, 14, 14);
+}
+
+.loader {
+    border: 16px solid rgb(69, 121, 134);
+    border-radius: 50%;
+    border-top: 16px solid rgb(116, 182, 199);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 45vh;
+    left: 43vw;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#complete{
+    width: 20vw;
+    height: 20vw;
+    position: fixed;
+    bottom: 15vh;
+    left: 40vw;
+    display: none;
+}
+#complete img{
+    width: 100%;
+    height: 90%;
+}
