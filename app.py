@@ -55,8 +55,6 @@ def index():
                         data['Colour'][i]='g'
                 elif data.loc[i][2].upper() == 'FAULT':
                         data['Colour'][i]='r'
-                else:
-                    data['Colour'][i]='k'
 
                 chosen=data.loc[i][3]
                 colour=chosen
