@@ -117,8 +117,8 @@ def index():
         svg2 = "Editable_Rose" + ".svg"
         fig2.savefig(fig_dir + png2, bbox_inches='tight', dpi=300)
         fig2.savefig(fig_dir + svg2, bbox_inches='tight', dpi=300)
-        shutil.make_archive('static/Stereoplots', 'zip', 'static/files/figures')
-        shutil.rmtree('static/files/figures')
+        shutil.make_archive('static/Stereoplots', 'zip', 'static/files/Figures')
+        shutil.rmtree('static/files/Figures')
         os.remove('static/files/data.csv')
         return send_from_directory(full_path,'Stereoplots.zip')
 
@@ -156,19 +156,7 @@ def plot_png():
     return Response(output.getvalue(), mimetype='image/png')
 
 
-if __name__ == '__app__':
+if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-# Run the app in powershell
-# $env:FLASK_APP = "app.py"
-# $env:FLASK_DEBUG = "1"
-# flask run 
-
-# For pushing to github
-# git add -A
-# git commit -m "some text"
-# git push
 
 
